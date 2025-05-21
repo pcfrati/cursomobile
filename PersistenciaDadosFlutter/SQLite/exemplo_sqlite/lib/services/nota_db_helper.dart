@@ -64,6 +64,4 @@ class NotaDbHelper {
       whereArgs: [id]
     );
   }
-
-  // delete DB
 }
