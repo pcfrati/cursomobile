@@ -102,7 +102,7 @@ class _NotaViewState extends State<NotaView>{
     ));
   }
   
-  void _deleteNota(int id) async {
+  void _deleteNota(int id) async { 
     try {
       await _controller._deleteNota(id);
       _carregarDados();
