@@ -4,18 +4,16 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-class APiService {
+class ApiService {
   // atributos e métodos da classe e não do objeto
   //* base URL para conexão API
   // static -> transforma o atributo em atributo da classe  não do objeto
-  static const String _baseUrl = "http://10.109.197.8:3013";
+  static const String _baseUrl = "http://10.109.197.19:3014";
 
   //? métodos
   //* GET (listar todos os recurso)
-  static Future<List<dynamic>> getList(String path) async {
-    final res = await http.get(
-      Uri.parse("$_baseUrl/$path"),
-    ); // uri -> convert string -> URL
+  static Future<List<dynamic>> getList(String path) async{
+    final res = await http.get(Uri.parse("$_baseUrl/$path")); // uri -> convert string -> URL
     if (res.statusCode == 200) return json.decode(res.body,); //? deu certo convert as resposta de json -> list dynamic e final
     //! se não deu certo -> gerar um erro
     throw Exception("Falha ao Carregar Lista de $path");
@@ -38,7 +36,7 @@ class APiService {
       //endereço da api
       Uri.parse("$_baseUrl/$path"),
       //headers
-      headers: {"Content-Type/": "application/json"},
+      headers: {"Content-Type": "application/json"},
       body: json.encode(body),
     );
     if (res.statusCode == 201) return json.decode(res.body);
@@ -52,7 +50,7 @@ class APiService {
       //endereço da api
       Uri.parse("$_baseUrl/$path/$id"),
       //headers
-      headers: {"Content-Type/":"application/json"},
+      headers: {"Content-Type":"application/json"},
       body: json.encode(body)
     );
     if(res.statusCode == 200) return json.decode(res.body);
