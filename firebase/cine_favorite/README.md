@@ -65,7 +65,7 @@ Construir um Aplicativo do Zero - O CineFavorite permitirá criar uma conta e bu
             +readList()
         }
 
-        User "1" --> "*" Favorite : "log"
+        User "1" --> "*" Favorite : log
 
 ```
 
