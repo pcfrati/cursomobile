@@ -15,12 +15,10 @@ class LocationScreen extends StatefulWidget {
 
 class _LocationScreenState extends State<LocationScreen> {
   //atributos
-  String locationMessage = "Localização não encontrada";
+  String locationMessage = "Localização Não Encontrada";
 
   void getLocation() async{
-    Position position = await Geolocator.getCurrentPosition(
-      desiredAccuracy: LocationAccuracy.high
-    );
+    Position position = await Geolocator.getCurrentPosition();
     setState(() {
       locationMessage = "Latitude: ${position.latitude}, Longitude ${position.longitude}";
     });
@@ -35,7 +33,9 @@ class _LocationScreenState extends State<LocationScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(locationMessage),
-            ElevatedButton(onPressed: getLocation, child: Text("Obter localização"))
+            ElevatedButton(
+              onPressed:() async{getLocation;}, 
+              child: Text("Obter Localização"))
           ],
         ),
       ),
