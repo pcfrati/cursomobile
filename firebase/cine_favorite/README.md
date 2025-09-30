@@ -20,8 +20,8 @@ Construir um Aplicativo do Zero - O CineFavorite permitirá criar uma conta e bu
 
 ## Diagramas
     ### 1. Classes
-    Demonstrar o funcionamento das entidades do sistema
-    - User :  classe já modela pelo FirebaseAuth
+    Demonstrar o funcionamento das entidades (informação armazenada no banco de dados) do sistema
+    - User :  classe já modelada pelo FirebaseAuth
         - email
         - senha
         - uid

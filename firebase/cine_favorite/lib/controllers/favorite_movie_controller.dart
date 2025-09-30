@@ -31,10 +31,9 @@ class FavoriteMovieController {
 
     // criar o OBJ no DB
     final movie = FavoriteMovie(
-      id: movieData["id"],
-      title: movieData["title"],
-      posterPath: movieData["poster_path"],
-    );
+      id: movieData["id"], 
+      title: movieData["title"], 
+      posterPath: imagemFile.path.toString()); //arrumar o endereço da imagem
 
     // adicioanr o OBj ao FireStore
     await _db
